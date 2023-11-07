@@ -1,12 +1,16 @@
 import time
 import pandas as pd
 
+#Global variables
+
+#Dictionary for the cities the user will want to discover.
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
 months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
 days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+#end Global variables
 
 def get_filters():
     """
@@ -253,12 +257,15 @@ def dispaly_raw_data(df):
             #filtering out bad responses.
             print('Yes or no are the only accepted responses\n')
 
-    print('-' * 40)
+    print('-'*40)
+    
 def main():
     while True:
+        #Get the city, month, and day from the user.
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
+        #After the user input has been validated, get the stats from the databases.
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
@@ -269,7 +276,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
