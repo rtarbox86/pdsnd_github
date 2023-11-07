@@ -62,7 +62,7 @@ def get_filters():
         else:
             print("Sorry that was not a valid day of the week. \n")
 
-    print('-'*40)
+    print('-'*50)
     return city, month, day
 
 
@@ -119,7 +119,7 @@ def time_stats(df):
     print('Most Common Hour is: ', df['Hour'].value_counts().idxmax())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*50)
 
 
 def station_stats(df):
@@ -149,7 +149,7 @@ def station_stats(df):
     print('\nThe most frequent combination of trips are from', combo)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*50)
 
 
 def trip_duration_stats(df):
@@ -194,7 +194,7 @@ def trip_duration_stats(df):
         print(f"\nThe average trip duration is {minutes} minutes and {seconds} seconds.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*50)
 
 
 def user_stats(df):
@@ -232,9 +232,9 @@ def user_stats(df):
         print("There are no birth year details in this file.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*50)
 
-def dispaly_raw_data(df):
+def display_raw_data(df):
     """
     Displays 5 lines of raw data at a time.
     Args:
@@ -257,7 +257,7 @@ def dispaly_raw_data(df):
             #filtering out bad responses.
             print('Yes or no are the only accepted responses\n')
 
-    print('-'*40)
+    print('-'*50)
     
 def main():
     while True:
@@ -271,7 +271,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        dispaly_raw_data(df)
+        display_raw_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
