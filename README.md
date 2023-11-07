@@ -40,3 +40,5 @@ Files used were the following:
 
 ### Credits
 Data and project information were kindly provided by [Udacity](https://www.udacity.com/).
+
+Documentation for using [Pandas](https://pandas.pydata.org/)
